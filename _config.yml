@@ -117,6 +117,6 @@ tag_archive:
 comments:
   provider: "facebook"
   facebook:
-    appid: # optional
+    appid: 405037007406322 # optional
     num_posts: # 5 (default)
     colorscheme: "dark" # "light" (default), "dark"
