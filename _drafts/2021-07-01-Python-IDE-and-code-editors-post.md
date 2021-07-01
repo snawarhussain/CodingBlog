@@ -16,6 +16,7 @@ A code editor is a software tool that can help writing code, editing it. A code 
 
 There are a number of code editors and IDEs for python and we will be only looking at 2 of them. That’s right 2. Both of them are by far, the best choices for python development for beginners and professionals alike. 
 
+
 # VISUAL STUDIO CODE
 
 Visual Studio Code (vs code) is an excellent choice for python as well as many other programming languages. It is a free open-source code editor/IDE  developed by microsoft.

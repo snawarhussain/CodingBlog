@@ -124,3 +124,17 @@ comments:
     appid: 405037007406322 # optional
     num_posts: # 5 (default)
     colorscheme: "dark" # "light" (default), "dark"
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-DM9HH4MJZ9"
+    anonymize_ip: false # default
+
+social:
+  type:  # Person or Organization (defaults to Person)
+  name:  Snawar Hussain # If the user or organization name differs from the site's name
+  links:
+    - "https://twitter.com/SnawarHussain"
+    - "https://www.facebook.com/SanawerHussain"
+    - "https://instagram.com/snawar_hussain"
+    - "https://www.linkedin.com/in/snawarhussain"
