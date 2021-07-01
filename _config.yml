@@ -103,6 +103,7 @@ defaults:
       comments: true
       share: true
       related: true
+      words_per_minute: 100
   # _pages
   - scope:
       path: "_pages"
