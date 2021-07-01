@@ -18,6 +18,7 @@ toc_icon: "cog"
 ---
 A code editor is a software tool that can help writing code, editing it. A code editor differs from an IDE in the sense that IDE (Integrated Development Environment) mostly specialize in one language and provide all kinds of a tool like automatic code suggestion, debugging and version control system. Most of the times IDE support a specific language while in code editor can support more than one programming language but you need to set it up individually for each programming language. While most IDEs come pre-installed with the languages they support. That being said, the gap between IDEs and code editors is being narrowed down to the point where it’s hard to differentiate them. And now code editors have extensions like IntelliSense for code auto-completion and suggestions and other extensions to debug the code.  So there are no strict implications of these two terms. Nonetheless, both IDEs and code editors help us in writing code.
 
+
 There are a number of code editors and IDEs for python and we will be only looking at 2 of them. That’s right 2. Both of them are by far, the best choices for python development for beginners and professionals alike. 
 
 
@@ -96,9 +97,8 @@ from here i am selecting `new_environment` made in earlier in previous post.
 
 ![pycharm download page](/assets/images/python-IDE/conda_env.png)
 
-and then accept all the prompts. the project will be loaded in with a `main.py` file that can be run using the <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-  <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-</svg> on the top right corner.
+and then accept all the prompts. the project will be loaded in with a `main.py` file that can be run by clicking the <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg> on the top right corner.
+  
 
 ![pycharm download page](/assets/images/python-IDE/project_loaded.png)
 

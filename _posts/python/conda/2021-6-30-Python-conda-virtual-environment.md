@@ -10,6 +10,10 @@ tags:
     - Anaconda
     - miniconda3
     - virtual environments
+
+toc: true
+toc_label: "Contents of this post"
+toc_icon: "list"
 ---
 Setting up python and managing different packages can be frustrating at first. Not because there's not enough documentation on it. But precisely because there is just too much about it with so many options to choose from.
 
