@@ -3,8 +3,8 @@ permalink: /about/
 title: "About"
 excerpt: "Coding blog and portfolio website"
 header:
-  overlay_image: /assets/images/about2.jpg
-  overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
+  overlay_image: /assets/images/cover_image.jpg
+  overlay_filter: 0.4 # same as adding an opacity of 0.5 to a black background
   caption: "Photo credit: [**Me :D**]"
   actions:
     - label: "Instagram"
