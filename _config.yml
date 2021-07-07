@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Big Blunders
+logo: "/assets/BB.png"
 email: sanawar.hussain18@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
 teaser: /assets/images/coding_stock.jpg
