@@ -139,3 +139,5 @@ social:
     - "https://www.facebook.com/SanawerHussain"
     - "https://instagram.com/snawar_hussain"
     - "https://www.linkedin.com/in/snawarhussain"
+atom_feed:
+  hide: true 
