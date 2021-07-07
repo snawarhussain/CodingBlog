@@ -142,5 +142,3 @@ social:
     - "https://www.linkedin.com/in/snawarhussain"
 atom_feed:
   hide: true 
-head_scripts:
-  - /assets/favicon/favicon.html
