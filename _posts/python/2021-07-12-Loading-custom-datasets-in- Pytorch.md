@@ -1,11 +1,12 @@
 ---
 title: "Working with custom datasets in PyTorch"
-excerpt: "Pytorch tutorial to load custom datasets for segmentation task where both inputs and labels are images"
+excerpt: "Pytorch dataloader tutorial for custom datasets where both inputs and labels are images"
 categories:
     - Blog
     - Python
     - Pytorch
     - Deep Learning
+   
 tags:
     - Pytorch
     - Dataset
