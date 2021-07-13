@@ -129,7 +129,7 @@ comments:
 analytics:
   provider: "google-gtag"
   google:
-    tracking_id: "G-DM9HH4MJZ9"
+    tracking_id: "UA-201073195-2"
     anonymize_ip: false # default
 
 social:
