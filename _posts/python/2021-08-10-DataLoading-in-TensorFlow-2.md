@@ -7,7 +7,7 @@ zip_ref.extractall('/content')
 zip_ref.close()
 ```
 
-# Using different methods to load custom dataset in TensorFlow 2 for classification
+# Different ways to load custom dataset in TensorFlow 2 for classification
 
 
 ---
@@ -155,7 +155,7 @@ here i will demonstrate the number 2 and 3 method for loading data.
 
 
 
-# Numpy to load data in tensorflow
+# Cv2 and NumPy to load data in TensorFlow
 for this method we will loop through the directories to list all images and their paths just like we did before while splitting the data.
 and then create numpy array from images and their labels.
 
@@ -305,7 +305,7 @@ model.summary()
     _________________________________________________________________
 
 
-# Compiling and traing the model for 20 epoch
+# Compiling and traing the model for 20 epochs
 on each epoch the dataset will return a batch of 6 shuffled images along with their labels. for a total of 4 step. 
 `4*6 = 24(total images in train_set)`
 
@@ -367,7 +367,7 @@ history = model.fit(train_data, epochs=20)
 80% train accuracy is not that bad. next tutorial i will show how to get a 100% test and train accuracy on this dataset
 
 
-# Using tensorflows biult-in class `ImageDataGenerator` and `flow_from_directory()` class method  to load data
+# Using TensorFlow's built-in class `ImageDataGenerator` and `flow_from_directory()` class method  to load data
 Although the numpy way of loading data is more intuitive and very *pythonic* however, it might be a little difficult for some poeple. for that, Tensorflow has  biult-in methods  like `flow_from_directory()` which can be used to load classification data.
 we need to pass the root directory of the data set as an argument and tensorflow handles the rest. it recognizes each subdirectory in the root as a class and the files insides and inputs. for example if we pass a directory named `training` with two folders,  with  30 and  25 images respectively,  to this method then it will recgonize them as two classes `0` and `1` having 30 and 25 images. 
 we can also set data shuffling to be true and define batch size, with arguments to this method and apply transforms like rotation, zoom, random_crop and random flips.
