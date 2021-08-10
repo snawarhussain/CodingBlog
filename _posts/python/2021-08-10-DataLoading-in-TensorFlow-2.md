@@ -20,18 +20,8 @@ toc_icon: "cog"
 ---
 
 
-<<<<<<< HEAD
-```python
-import zipfile
-zip_ref = zipfile.ZipFile('/content/data.zip', 'r')
-zip_ref.extractall('/content')
-zip_ref.close()
-```
-
 # Different ways to load custom dataset in TensorFlow 2 for classification
 
-=======
->>>>>>> d8abb8ec9e272c13aa792880c4f4033fdec57462
 
 ---
 With the release of TensorFlow 2 and Keras being the default frontend for it. there is mass confusion on which tutorial to follow to work with custom datasets in TensorFlow 2 since Keras provides their documentation while TensorFlow official website has its own guide to follow and to be honest, none of them is user friendly and just adds to the confusion, particularly, if you are switching from another framework like PyTorch or just have been out of touch with TensorFlow for a long time.
@@ -173,11 +163,7 @@ here I will demonstrate the number 2 and 3 method for loading data.
 
 
 
-<<<<<<< HEAD
 # Cv2 and NumPy to load data in TensorFlow
-=======
-## Numpy to load data in TensorFlow
->>>>>>> d8abb8ec9e272c13aa792880c4f4033fdec57462
 for this method we will loop through the directories to list all images and their paths just like we did before while splitting the data.
 and then create NumPy array from images and their labels.
 
@@ -327,13 +313,8 @@ model.summary()
     _________________________________________________________________
 
 
-<<<<<<< HEAD
 # Compiling and traing the model for 20 epochs
 on each epoch the dataset will return a batch of 6 shuffled images along with their labels. for a total of 4 step. 
-=======
-## Compiling and training the model for 20 epochs
-on each epoch the dataset will return a batch of 6 shuffled images along with their labels. for a total of 4 steps. 
->>>>>>> d8abb8ec9e272c13aa792880c4f4033fdec57462
 `4*6 = 24(total images in train_set)`
 
 
@@ -394,15 +375,9 @@ history = model.fit(train_data, epochs=20)
 80% train accuracy is not that bad. next tutorial i will show how to get a 100% test and train accuracy on this dataset
 
 
-<<<<<<< HEAD
 # Using TensorFlow's built-in class `ImageDataGenerator` and `flow_from_directory()` class method  to load data
 Although the numpy way of loading data is more intuitive and very *pythonic* however, it might be a little difficult for some poeple. for that, Tensorflow has  biult-in methods  like `flow_from_directory()` which can be used to load classification data.
 we need to pass the root directory of the data set as an argument and tensorflow handles the rest. it recognizes each subdirectory in the root as a class and the files insides and inputs. for example if we pass a directory named `training` with two folders,  with  30 and  25 images respectively,  to this method then it will recgonize them as two classes `0` and `1` having 30 and 25 images. 
-=======
-# Using tensorflows biult-in class `ImageDataGenerator` and `flow_from_directory()` class method  to load data
-Although the NumPy way of loading data is more intuitive and very *pythonic* however, it might be a little difficult for some people. for that, Tensorflow has built-in methods like `flow_from_directory()` which can load classification data.
-we need to pass the root directory of the data set as an argument and TensorFlow handles the rest. it recognizes each subdirectory in the root as a class and the files inside, as inputs. for example, if we pass a directory named `training` with two folders,  with  30 and  25 images respectively,  to this method then it will recognize them as two classes `0` and `1` having 30 and 25 images. 
->>>>>>> d8abb8ec9e272c13aa792880c4f4033fdec57462
 we can also set data shuffling to be true and define batch size, with arguments to this method and apply transforms like rotation, zoom, random_crop and random flips.
 for more, go check out the official documentation for this [here](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator#flow_from_directory)
 
