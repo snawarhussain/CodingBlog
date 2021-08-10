@@ -1,5 +1,26 @@
+---
+title: "Using different methods to load custom datasets in TensorFlow 2 for classification"
+excerpt: "Tensorflow: preparing and loading custom datasets"
+categories:
+    - Blog
+    - Python
+    - TensorFlow
+    - TensorFlow 2.5.0
+   
+tags:
+    - TensorFlow
+    - Keras
+    - ImageDataGenerator
+    - Deep Learning
+    - Training 
+
+toc: true
+toc_label: "Contents of this post"
+toc_icon: "cog"
+---
 
 
+<<<<<<< HEAD
 ```python
 import zipfile
 zip_ref = zipfile.ZipFile('/content/data.zip', 'r')
@@ -9,17 +30,19 @@ zip_ref.close()
 
 # Different ways to load custom dataset in TensorFlow 2 for classification
 
+=======
+>>>>>>> d8abb8ec9e272c13aa792880c4f4033fdec57462
 
 ---
-With the release of tensorflow 2 and keras being the default frontend for it. there is a mass confusion on which tutorial to follow to work with custom datasets in tensorflow 2 since keras provides their own documentation while tensorflow official website has their own guide to follow and to be honest, none of the them are user friendly and just adds to the confusion, particularly, if you are switichng from another framework like PyTorch or just have been out of touch with tensorflow for a long time.
+With the release of TensorFlow 2 and Keras being the default frontend for it. there is mass confusion on which tutorial to follow to work with custom datasets in TensorFlow 2 since Keras provides their documentation while TensorFlow official website has its own guide to follow and to be honest, none of them is user friendly and just adds to the confusion, particularly, if you are switching from another framework like PyTorch or just have been out of touch with TensorFlow for a long time.
 
 
-There is no unified way of creating a custom dataset for training in tensorflow, rather in depends on type of dataset you are workig with. tensorflow is in fact, quite flexible in this regard and you can feed data in a number of ways to the model for training and evaluation.
+There is no unified way of creating a custom dataset for training in TensorFlow, rather it depends on the type of dataset you are working with. TensorFlow is quite flexible in this regard and you can feed data in a number of ways to the model for training and evaluation.
 
-## Model.fit()  method
+# Model.fit()  method
 first we need to understand what kind of data can be fed to the `tf.keras.Model.fit()` 
 
-According to the official documentation, the fit() method can work with a number of data types.
+According to the official documentation, the fit() method can work with several data types.
 
 `fit()` method accepts inputs `x` and targets `y`. input `x` could be: 
 * A Numpy array (or array-like), or a list of arrays (in case the model has multiple inputs).
@@ -40,8 +63,8 @@ and targets `y` :
 ---
 
 
-In this example we will load image classification data for both training and validation using numpy and cv2. you need to get comfortable using python operations like os.listdir, enumerate to loop through directories and search for files and load them iteratively and save them in an array or list.
-for a binary classification task,  the image dataset should be structured in following way:
+In this example, we will load image classification data for both training and validation using NumPy and cv2. you need to get comfortable using python operations like os.listdir, enumerate to loop through directories and search for files and load them iteratively and save them in an array or list.
+for a binary classification task,  the image dataset should be structured in the following way:
 
 ```js
 /
@@ -54,20 +77,15 @@ for a binary classification task,  the image dataset should be structured in fol
         -Class_B/
 
 ```
-if the image data directory is not in this structure we can make new directories and randomly split the data into training and testing sets using code this comes in handy specially if you are dealing with a large dataset.
+if the image data directory is not in this structure we can make new directories and randomly split the data into training and testing sets using code this comes in handy especially if you are dealing with a large dataset.
 let's go ahead and write code for this step.
 
 
 
 
 
-## Creating new directoris for the dataset 
-in this example i am using an image dataset of healthy and glaucoma infested fundus images. source directory have two folders namely `healthy` and `glaucoma` that have images. we need to create training and testing directories for the both classes of  `healthy` and `glaucoma` images. and randomly split a portion of data between training and testing set. for that first we need to make new directories for out dataset to reside for that we will execute the following code:
-
-
-```python
-! rm -rf '/content/dataset'
-```
+## Creating new directories for the dataset 
+in this example, I am using an image dataset of healthy and glaucoma infested fundus images. source directory has two folders namely `healthy` and `glaucoma` that have images. we need to create training and testing directories for both classes of  `healthy` and `glaucoma` images. and randomly split a portion of data between the training and testing set. for that first we need to make new directories for our dataset to reside for that we will execute the following code:
 
 
 ```python
@@ -101,11 +119,11 @@ for directory in to_create.values():
 
 
 ## splitting and randomly sampling the data into test and train sets
-after creating directories, the next step is to split the data in to portions for training and testing. from the whole data we will randomly sample a portion for train and the rest for the test.
+after creating directories, the next step is to split the data into portions for training and testing. from the whole data, we will randomly sample a portion for the train and the rest for the test.
 
-for that, we will iterate through the files in each class namely `healthy` and `glaucoma` one by one and  list all the file names and paths. after that we will first shuffle and then slice them into portions for training and testing and copy these files  to the training and testing directories we created in previos step  
+for that, we will iterate through the files in each class namely `healthy` and `glaucoma` one by one and list all the file names and paths. after that, we will first shuffle and then slice them into portions for training and testing and copy these files  to the training and testing directories we created in previous step  
 
-the fuction `split_data()` take a source path to files, and after making a list of all the files, shuffles them and copy a portion defined by `split_size` in  `Train_path` and `Test_path`  
+the function `split_data()` take a source path to files, and after making a list of all the files, shuffles them and copy a portion defined by `split_size` in  `Train_path` and `Test_path`  
 
 
 
@@ -138,26 +156,30 @@ split_data('/content/data/glaucoma',to_create.get('glaucoma_train_dir'), to_crea
 split_data('/content/data/healthy',to_create.get('healthy_train_dir'), to_create.get('healthy_test_dir'), 0.8)
 ```
 
-# Loading data in tensorflow 
-once we have our data in desired structure and randomly split. now comes the important part where we need to load it in tensorflow.
-from here we can do it in two ways without `numpy` and probably `cv2` that are pretty straight forward and intuitive. 
+# Loading data in TensorFlow 
+once we have our data in desired structure and randomly split. now comes the important part where we need to load it in Tensorflow.
+from here we can do it in two ways without `numpy` and probably `cv2` that are pretty straightforward and intuitive. 
 
 
-1.   iterate thoguht train and test dir and load the data into numpy array and feed the model these array as `x` inputs and `y` targets
-2.   after getting numpy arrays from 1. use them to create a tensor dataset with `from_tensor_slices()` method of tensorflow. with this approach we can create batches of our data that are randomly shuffled on each epoch for the training.
-3. and the 3rd and the most esiest way, we can load tensors of data directory using the `flow_from_directory()` method. that automatically detects the classes of data for classification and generates batches.
+1.   iterate through train and test dir and load the data into NumPy array and feed the model these array as `x` inputs and `y` targets
+2.   after getting numpy arrays from 1. use them to create a tensor dataset with `from_tensor_slices()` method of TensorFlow. with this approach we can create batches of our data that are randomly shuffled on each epoch for the training.
+3. and the 3rd and the easiest way, we can load tensors of data directory using the `flow_from_directory()` method. that automatically detects the classes of data for classification and generates batches.
 
-here i will demonstrate the number 2 and 3 method for loading data.
-
-
-
+here I will demonstrate the number 2 and 3 method for loading data.
 
 
 
 
+
+
+
+<<<<<<< HEAD
 # Cv2 and NumPy to load data in TensorFlow
+=======
+## Numpy to load data in TensorFlow
+>>>>>>> d8abb8ec9e272c13aa792880c4f4033fdec57462
 for this method we will loop through the directories to list all images and their paths just like we did before while splitting the data.
-and then create numpy array from images and their labels.
+and then create NumPy array from images and their labels.
 
 
 ```python
@@ -190,13 +212,13 @@ print ( ' testset has length of {}'.format(len(x_test)))
      testset has length of 6
 
 
-each item in the `x`_train ndarray is an array of image  while `y` is array of labels where each label is either 0 or 1 for glaucoma and healthy class respectively.
+each item in the `x`_train ndarray is an array of image while `y` is array of labels where each label is either 0 or 1 for glaucoma and healthy class respectively.
 
-the shape of `x` is `(24, 256, 256)` which idicates that we have 24 images of size (256, 256) each.
-in order to feed this input data to our tensorflow CNN, we need to add an extra dimension for channels, since we are using gray images, we just need to add another dimention of size 1 to the data. we can do that using numpy's `expand_dims()` function. 
+the shape of `x` is `(24, 256, 256)` which indicates that we have 24 images of size (256, 256) each.
+to feed this input data to our TensorFlow CNN, we need to add an extra dimension for channels, since we are using gray images, we just need to add another dimension of size 1 to the data. we can do that using numpy's `expand_dims()` function. 
 
-NOTE: By default tensorflow uses channel last data format, that means the data should be in the format of (B, H, W , C) with batch(B), height(H) , widht(W) and finally channels(C) at the last position for the input tensor
-so we will add the channel dimention at the last position with axis=3
+**NOTE:** By default, TensorFlow uses channel last data format, which means the data should be in the format of (B, H, W, C) with batch(B), height(H), width(W) and finally channels(C) at the last position for the input tensor so we will add the channel dimension at the last position with axis=3
+{: .notice--info}
 
 
 
@@ -239,11 +261,11 @@ train_data = tf.data.Dataset.from_tensor_slices((x_train, y_train))
 test_data = tf.data.Dataset.from_tensor_slices((x_test, y_test))
 ```
 
-We can call methods like `shuffle()` and `batch()` on the tesorflow dataset.
+We can call methods like `shuffle()` and `batch()` on the TensorFlow dataset.
 
-whith `shuffle()` method called, dataset fills a buffer with `buffer_size` elements, then randomly samples elements from this buffer, replacing the selected elements with new elements. For perfect shuffling, a buffer size greater than or equal to the full size of the dataset is required.
+with `shuffle()` method called, the dataset fills a buffer with `buffer_size` elements, then randomly samples elements from this buffer, replacing the selected elements with new elements. For perfect shuffling, a buffer size greater than or equal to the full size of the dataset is required.
 
-while `batch()` method defines the batches to generate from dataset according to the batch size given.
+while `batch()` method defines the batches to generate from the dataset according to the batch size given.
 
 
 ```python
@@ -251,8 +273,8 @@ train_data = train_data.shuffle(24).batch(6)
 test_data = test_data.shuffle(24).batch(2)
 ```
 
-# Creating a simple CNN for classfication task to train the prepared data
-this is just for demonstration purpose to give an idea how we  can use the prepared data to train a model.
+## Creating a simple CNN for classification task to train the prepared data
+this is just for demonstration purposes to give an idea of how we can use the prepared data to train a model.
 
 
 
@@ -305,8 +327,13 @@ model.summary()
     _________________________________________________________________
 
 
+<<<<<<< HEAD
 # Compiling and traing the model for 20 epochs
 on each epoch the dataset will return a batch of 6 shuffled images along with their labels. for a total of 4 step. 
+=======
+## Compiling and training the model for 20 epochs
+on each epoch the dataset will return a batch of 6 shuffled images along with their labels. for a total of 4 steps. 
+>>>>>>> d8abb8ec9e272c13aa792880c4f4033fdec57462
 `4*6 = 24(total images in train_set)`
 
 
@@ -367,20 +394,26 @@ history = model.fit(train_data, epochs=20)
 80% train accuracy is not that bad. next tutorial i will show how to get a 100% test and train accuracy on this dataset
 
 
+<<<<<<< HEAD
 # Using TensorFlow's built-in class `ImageDataGenerator` and `flow_from_directory()` class method  to load data
 Although the numpy way of loading data is more intuitive and very *pythonic* however, it might be a little difficult for some poeple. for that, Tensorflow has  biult-in methods  like `flow_from_directory()` which can be used to load classification data.
 we need to pass the root directory of the data set as an argument and tensorflow handles the rest. it recognizes each subdirectory in the root as a class and the files insides and inputs. for example if we pass a directory named `training` with two folders,  with  30 and  25 images respectively,  to this method then it will recgonize them as two classes `0` and `1` having 30 and 25 images. 
+=======
+# Using tensorflows biult-in class `ImageDataGenerator` and `flow_from_directory()` class method  to load data
+Although the NumPy way of loading data is more intuitive and very *pythonic* however, it might be a little difficult for some people. for that, Tensorflow has built-in methods like `flow_from_directory()` which can load classification data.
+we need to pass the root directory of the data set as an argument and TensorFlow handles the rest. it recognizes each subdirectory in the root as a class and the files inside, as inputs. for example, if we pass a directory named `training` with two folders,  with  30 and  25 images respectively,  to this method then it will recognize them as two classes `0` and `1` having 30 and 25 images. 
+>>>>>>> d8abb8ec9e272c13aa792880c4f4033fdec57462
 we can also set data shuffling to be true and define batch size, with arguments to this method and apply transforms like rotation, zoom, random_crop and random flips.
 for more, go check out the official documentation for this [here](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator#flow_from_directory)
 
-below is an example for using this method to load data from a directory
+below is an example of using this method to load data from a directory
 
 
-for training dataset, first we define the different transforms, operation that we want to apply to this dataset and pass it to the `ImageDataGenerator` class. then we call the method `flow_from_directory()` on the class constructor `train_datagen` and pass the train directory path along with other arguments like `color_mode` and `batch_size` the shuffle is `True` by default so i didn't bother specifying it.
+for the training dataset, first, we define the different transforms, operations that we want to apply to this dataset and pass it to the `ImageDataGenerator` class. then we call the method `flow_from_directory()` on the class constructor `train_datagen` and pass the train directory path along with other arguments like `color_mode` and `batch_size` the shuffle is `True` by default so I didn't bother specifying it.
 
-as for the `test_data` we only apply rescale to image and not the augmetations. because we need to test our model on the unchanged data. 
+as for the `test_data` we only apply rescale to the image and not the augmentations. because we need to test our model on the unchanged data. 
 
-notice how tensorflow recognizes two different classes and the images for each of them and generates labels in the backend without the need for us to define it manually. it certainly gives a lot of abstraction and gets the job done for us
+notice how TensorFlow recognizes two different classes and the images for each of them and generates labels in the backend without defining them manually. it certainly gives a lot of abstraction and gets the job done for us
 {: .notice--info}
 
 
@@ -488,4 +521,5 @@ while we have a 70% train accuracy, we ended up getting a mere 33% accuracy on o
 That's it ...
 
 
- easy, right ?
+ easy, right?
+
