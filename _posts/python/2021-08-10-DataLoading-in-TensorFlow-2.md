@@ -1,6 +1,6 @@
 ---
-title: "Using different methods to load custom datasets in TensorFlow 2 for classification"
-excerpt: "Tensorflow: preparing and loading custom datasets"
+title: "Different ways to load custom dataset in TensorFlow 2 for classification"
+excerpt: "Tensorflow2: preparing and loading custom datasets"
 categories:
     - Blog
     - Python
@@ -19,8 +19,6 @@ toc_label: "Contents of this post"
 toc_icon: "cog"
 ---
 
-
-# Different ways to load custom dataset in TensorFlow 2 for classification
 
 
 ---
