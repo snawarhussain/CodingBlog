@@ -3,9 +3,7 @@ title: "Different ways to load custom dataset in TensorFlow 2 for classification
 excerpt: "Tensorflow2: preparing and loading custom datasets"
 categories:
     - Blog
-    - Python
     - TensorFlow
-    - TensorFlow 2.5.0
    
 tags:
     - TensorFlow
