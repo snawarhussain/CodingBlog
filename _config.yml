@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Big Blunders
+title: Snawar Hussain
 logo: "/assets/BB.png"
 email: sanawar.hussain18@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -57,11 +57,11 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Snawar Hussain"
-  avatar : "/assets/images/snawarhussain.webp"
-  bio    : "Graduate Student at Central South University
-          <br>majoring in Automation
-          <br>Research Areas: DeepLearning, Machine learning and image processing"
+  name: "Snawar Hussain"
+  avatar: "/assets/images/snawarhussain.webp"
+  bio: "Graduate Student at Central South University
+    <br>majoring in Automation
+    <br>Research Areas: DeepLearning, Machine learning and image processing"
   location: Changsha, China
   links:
     # - label: "Website"
@@ -119,7 +119,7 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-  
+
 comments:
   provider: "facebook"
   facebook:
@@ -133,12 +133,12 @@ analytics:
     anonymize_ip: false # default
 
 social:
-  type:  # Person or Organization (defaults to Person)
-  name:  Snawar Hussain # If the user or organization name differs from the site's name
+  type: # Person or Organization (defaults to Person)
+  name: Snawar Hussain # If the user or organization name differs from the site's name
   links:
     - "https://twitter.com/SnawarHussain"
     - "https://www.facebook.com/SanawerHussain"
     - "https://instagram.com/snawar_hussain"
     - "https://www.linkedin.com/in/snawarhussain"
 atom_feed:
-  hide: true 
+  hide: true

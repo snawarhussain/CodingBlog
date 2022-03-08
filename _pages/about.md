@@ -11,9 +11,10 @@ header:
       url: "https://instagram.com/snawar_hussain"
 ---
 
-A personal blog where i'll be mostly writing about tech and programming. &nbsp;
-
-> if a person asks your help in coding, lend them a hand, and if  two people ask; write a blog for it.
-><div style="text-align: right" ><b>-The unwritten rule of blogging </b> </div>  &nbsp;
-
 This site is more of a brain dump and a way to document coding/tech related issues that i encounter everyday and their solutions hoping it might help someone else.
+
+<!--- <A blog where i mostly write about tech and programming. &nbsp;> ()-->
+
+> if a person asks your help in coding, help them out. If two people ask for it; write a blog.
+>
+> <div style="text-align: right" ><b>-The unwritten rule of blogging </b> </div>  &nbsp;
